@@ -95,8 +95,8 @@ export function Header() {
       </div>
 
       {open && (
-        <div className="fixed inset-0 bg-navy-deep z-50 animate-fade-in lg:hidden">
-          <div className="container-luxe flex items-center justify-between h-20">
+        <div className="fixed inset-0 bg-navy-deep z-50 lg:hidden">
+          <div className="container-luxe flex items-center justify-between h-20 bg-navy-deep">
             <span className="font-display text-white text-lg">Menu</span>
             <button onClick={() => setOpen(false)} className="text-white p-2" aria-label="Close menu">
               <X size={24} />
