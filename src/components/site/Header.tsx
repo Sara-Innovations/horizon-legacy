@@ -45,7 +45,7 @@ export function Header() {
             JH
           </span>
           <div className="hidden sm:block leading-tight">
-            <div className={`font-display text-base ${scrolled ? "text-navy-deep" : "text-white"}`}>
+            <div className={`font-display text-base ${scrolled ? (dark ? "text-white" : "text-navy-deep") : "text-white"}`}>
               Jonathan Harrison
             </div>
             <div className="text-[10px] tracking-[0.25em] uppercase text-gold">
@@ -62,7 +62,7 @@ export function Header() {
               activeProps={{ className: "text-gold" }}
               activeOptions={{ exact: n.to === "/" }}
               className={`px-3 py-2 text-sm tracking-wide transition-colors hover:text-gold ${
-                scrolled ? "text-navy-deep" : "text-white/90"
+                scrolled ? (dark ? "text-white/90" : "text-navy-deep") : "text-white/90"
               }`}
             >
               {n.label}
