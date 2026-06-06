@@ -74,14 +74,20 @@ export function Header() {
           <button
             onClick={() => setDark((d) => !d)}
             aria-label="Toggle theme"
-            className={`p-2 rounded-full transition ${scrolled ? "text-navy-deep hover:bg-secondary" : "text-white hover:bg-white/10"}`}
+            className={`p-2 rounded-full transition ${
+              scrolled
+                ? dark
+                  ? "text-white hover:bg-white/10"
+                  : "text-navy-deep hover:bg-secondary"
+                : "text-white hover:bg-white/10"
+            }`}
           >
             {dark ? <Sun size={18} /> : <Moon size={18} />}
           </button>
           <button
             onClick={() => setOpen(true)}
             aria-label="Open menu"
-            className={`lg:hidden p-2 ${scrolled ? "text-navy-deep" : "text-white"}`}
+            className={`lg:hidden p-2 ${scrolled ? (dark ? "text-white" : "text-navy-deep") : "text-white"}`}
           >
             <Menu size={22} />
           </button>
