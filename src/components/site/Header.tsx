@@ -32,7 +32,11 @@ export function Header() {
   return (
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
-        scrolled ? "glass-light shadow-sm" : "bg-transparent"
+        scrolled
+          ? dark
+            ? "glass-dark shadow-lg"
+            : "glass-light shadow-sm bg-white/90"
+          : "bg-transparent"
       }`}
     >
       <div className="container-luxe flex items-center justify-between h-20">
