@@ -117,6 +117,12 @@
   border: 1px solid color-mix(in oklab, var(--navy) 8%, transparent);
 }
 
+@utility glass-dark {
+  background: color-mix(in oklab, oklch(0.13 0.04 260) 85%, transparent);
+  backdrop-filter: blur(20px);
+  border: 1px solid color-mix(in oklab, white 10%, transparent);
+}
+
 @utility text-gold {
   color: var(--gold);
 }

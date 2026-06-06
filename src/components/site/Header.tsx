@@ -32,7 +32,11 @@ export function Header() {
   return (
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
-        scrolled ? "glass-light shadow-sm" : "bg-transparent"
+        scrolled
+          ? dark
+            ? "glass-dark shadow-lg"
+            : "glass-light shadow-sm bg-white/90"
+          : "bg-transparent"
       }`}
     >
       <div className="container-luxe flex items-center justify-between h-20">
@@ -41,7 +45,7 @@ export function Header() {
             JH
           </span>
           <div className="hidden sm:block leading-tight">
-            <div className={`font-display text-base ${scrolled ? "text-navy-deep" : "text-white"}`}>
+            <div className={`font-display text-base ${scrolled ? (dark ? "text-white" : "text-navy-deep") : "text-white"}`}>
               Jonathan Harrison
             </div>
             <div className="text-[10px] tracking-[0.25em] uppercase text-gold">
@@ -58,7 +62,7 @@ export function Header() {
               activeProps={{ className: "text-gold" }}
               activeOptions={{ exact: n.to === "/" }}
               className={`px-3 py-2 text-sm tracking-wide transition-colors hover:text-gold ${
-                scrolled ? "text-navy-deep" : "text-white/90"
+                scrolled ? (dark ? "text-white/90" : "text-navy-deep") : "text-white/90"
               }`}
             >
               {n.label}
@@ -70,14 +74,20 @@ export function Header() {
           <button
             onClick={() => setDark((d) => !d)}
             aria-label="Toggle theme"
-            className={`p-2 rounded-full transition ${scrolled ? "text-navy-deep hover:bg-secondary" : "text-white hover:bg-white/10"}`}
+            className={`p-2 rounded-full transition ${
+              scrolled
+                ? dark
+                  ? "text-white hover:bg-white/10"
+                  : "text-navy-deep hover:bg-secondary"
+                : "text-white hover:bg-white/10"
+            }`}
           >
             {dark ? <Sun size={18} /> : <Moon size={18} />}
           </button>
           <button
             onClick={() => setOpen(true)}
             aria-label="Open menu"
-            className={`lg:hidden p-2 ${scrolled ? "text-navy-deep" : "text-white"}`}
+            className={`lg:hidden p-2 ${scrolled ? (dark ? "text-white" : "text-navy-deep") : "text-white"}`}
           >
             <Menu size={22} />
           </button>
@@ -85,8 +95,8 @@ export function Header() {
       </div>
 
       {open && (
-        <div className="fixed inset-0 bg-navy-deep z-50 animate-fade-in lg:hidden">
-          <div className="container-luxe flex items-center justify-between h-20">
+        <div className="fixed inset-0 bg-navy-deep z-50 lg:hidden">
+          <div className="container-luxe flex items-center justify-between h-20 bg-navy-deep">
             <span className="font-display text-white text-lg">Menu</span>
             <button onClick={() => setOpen(false)} className="text-white p-2" aria-label="Close menu">
               <X size={24} />
