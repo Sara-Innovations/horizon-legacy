@@ -15,10 +15,10 @@ export const projects = [
 
 export const testimonials = [
   { name: "Sarah Al-Mansoori", role: "Private Investor", quote: "Shariful's clarity of vision and unwavering integrity make him a rare leader. Every project he touches becomes a landmark.", image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200" },
-  { name: "Daniel Whitmore", role: "CEO, Whitmore Capital", quote: "Working with Prime Horizon has been transformative. They deliver beyond expectations, on time and to the highest standard.", image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200" },
+  { name: "Daniel Whitmore", role: "CEO, Whitmore Capital", quote: "Working with Landmark Group has been transformative. They deliver beyond expectations, on time and to the highest standard.", image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200" },
   { name: "Aisha Rahman", role: "Homeowner, Azure Heights", quote: "Our home is more than a residence – it is a sanctuary. Every detail reflects extraordinary craftsmanship.", image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200" },
   { name: "Michael Chen", role: "Managing Partner, Chen & Wright", quote: "Shariful combines strategic brilliance with genuine humility. A true statesman of the industry.", image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200" },
-  { name: "Layla Hassan", role: "Director, Hassan Group", quote: "Prime Horizon's commitment to sustainable communities sets a new benchmark for the region.", image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200" },
+  { name: "Layla Hassan", role: "Director, Hassan Group", quote: "Landmark Group's commitment to sustainable communities sets a new benchmark for the region.", image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200" },
   { name: "Rajesh Patel", role: "Corporate Tenant, Meridian Tower", quote: "The workplace experience they have crafted is simply best-in-class – it has elevated our entire culture.", image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200" },
 ];
 
@@ -34,8 +34,8 @@ export const awards = [
 ];
 
 export const timeline = [
-  { year: 2024, title: "Expansion into NEOM & New Markets", text: "Led Prime Horizon's strategic entry into giga-projects across Saudi Arabia." },
-  { year: 2018, title: "Appointed Managing Director & CEO", text: "Took the helm at Prime Horizon Developments Ltd., scaling operations across the GCC." },
+  { year: 2024, title: "Expansion into NEOM & New Markets", text: "Led Landmark Group's strategic entry into giga-projects across Saudi Arabia." },
+  { year: 2018, title: "Appointed Managing Director & CEO", text: "Took the helm at Landmark Group, scaling operations across the GCC." },
   { year: 2012, title: "Founded Harrison Capital Advisory", text: "Established a boutique real estate advisory serving sovereign and institutional clients." },
   { year: 2007, title: "VP of Development, Atlas Global", text: "Delivered $2B+ of residential and commercial portfolios across three continents." },
   { year: 2003, title: "Joined the Real Estate Industry", text: "Began career in London structuring landmark commercial transactions." },
@@ -55,11 +55,11 @@ export const blogs = [
 
 export const media = [
   { type: "Interview", outlet: "Bloomberg Middle East", title: "Shaping the Next Generation of Gulf Skylines", date: "Jun 2026", image: "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=1000" },
-  { type: "Press", outlet: "Forbes Middle East", title: "Prime Horizon's $2B Expansion Across the GCC", date: "May 2026", image: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=1000" },
+  { type: "Press", outlet: "Forbes Middle East", title: "Landmark Group's $2B Expansion Across the GCC", date: "May 2026", image: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=1000" },
   { type: "Keynote", outlet: "Cityscape Global", title: "Keynote: Building for the Next Century", date: "Apr 2026", image: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=1000" },
   { type: "Feature", outlet: "Architectural Digest", title: "Inside the Mind of a Modern Developer", date: "Mar 2026", image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1000" },
   { type: "Podcast", outlet: "The CEO Series", title: "Leadership Lessons from 20 Years in Real Estate", date: "Feb 2026", image: "https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=1000" },
-  { type: "Press Release", outlet: "Prime Horizon Newsroom", title: "Prime Horizon Breaks Ground on Helix Innovation Hub", date: "Jan 2026", image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1000" },
+  { type: "Press Release", outlet: "Landmark Group Newsroom", title: "Landmark Group Breaks Ground on Helix Innovation Hub", date: "Jan 2026", image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1000" },
 ];
 
 export const values = [

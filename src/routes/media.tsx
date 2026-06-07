@@ -18,7 +18,7 @@ export const Route = createFileRoute("/media")({
 const videos = [
   { title: "Keynote — Cityscape Global 2026", thumb: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=900" },
   { title: "Interview with Bloomberg Middle East", thumb: "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=900" },
-  { title: "Inside Prime Horizon — A Studio Tour", thumb: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=900" },
+  { title: "Inside Landmark Group — A Studio Tour", thumb: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=900" },
 ];
 
 function Media() {

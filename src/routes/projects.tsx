@@ -7,7 +7,7 @@ import { MapPin, Calendar, TrendingUp } from "lucide-react";
 export const Route = createFileRoute("/projects")({
   head: () => ({
     meta: [
-      { title: "Projects — Prime Horizon Portfolio" },
+      { title: "Projects — Landmark Group Portfolio" },
       { name: "description", content: "A curated portfolio of landmark residential, commercial and mixed-use developments led by Md Shariful Islam Khandakar." },
       { property: "og:url", content: "/projects" },
     ],

@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { Menu, X, Moon, Sun } from "lucide-react";
 
 const nav = [
@@ -29,6 +30,11 @@ export function Header() {
     document.documentElement.classList.toggle("dark", dark);
   }, [dark]);
 
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [open]);
+
   return (
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
@@ -49,7 +55,7 @@ export function Header() {
               Md Shariful Islam Khandakar
             </div>
             <div className="text-[10px] tracking-[0.25em] uppercase text-gold">
-              Prime Horizon
+              Landmark Group
             </div>
           </div>
         </Link>
@@ -94,9 +100,9 @@ export function Header() {
         </div>
       </div>
 
-      {open && (
+      {open && typeof document !== "undefined" && createPortal(
         <div
-          className="fixed inset-0 z-[60] lg:hidden overflow-y-auto"
+          className="fixed inset-0 z-[100] lg:hidden overflow-y-auto"
           style={{ backgroundColor: "oklch(0.13 0.04 260)" }}
         >
           <div className="container-luxe flex items-center justify-between h-20">
@@ -117,7 +123,8 @@ export function Header() {
               </Link>
             ))}
           </nav>
-        </div>
+        </div>,
+        document.body
       )}
     </header>
   );

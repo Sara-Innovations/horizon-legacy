@@ -7,7 +7,7 @@ export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Contact — Md Shariful Islam Khandakar" },
-      { name: "description", content: "Get in touch with the office of Md Shariful Islam Khandakar, MD & CEO of Prime Horizon Developments." },
+      { name: "description", content: "Get in touch with the office of Md Shariful Islam Khandakar, MD & CEO of Landmark Group." },
       { property: "og:url", content: "/contact" },
     ],
     links: [{ rel: "canonical", href: "/contact" }],
@@ -16,9 +16,7 @@ export const Route = createFileRoute("/contact")({
 });
 
 const offices = [
-  { city: "Dubai (HQ)", lines: ["Prime Horizon Developments Ltd.", "Business Bay Tower, 42nd Floor", "Downtown Business District", "Dubai, UAE"] },
-  { city: "Riyadh", lines: ["King Fahd Road, Olaya Tower", "12th Floor", "Riyadh, Kingdom of Saudi Arabia"] },
-  { city: "London", lines: ["8 Berkeley Square", "Mayfair", "London W1J 6DB, United Kingdom"] },
+  { city: "Dhaka (HQ)", lines: ["Landmark Group", "49 Siddique Tower", "Mohakhali C/A", "Dhaka 1212, Bangladesh"] },
 ];
 
 function Contact() {
@@ -32,9 +30,9 @@ function Contact() {
           <div>
             <h3 className="font-display text-2xl text-navy-deep mb-4">Direct Office</h3>
             <ul className="space-y-3 text-muted-foreground">
-              <li className="flex items-start gap-3"><Phone size={16} className="text-gold mt-1 shrink-0" /> +971 4 555 0199</li>
-              <li className="flex items-start gap-3"><Mail size={16} className="text-gold mt-1 shrink-0" /> office@primehorizon.ae</li>
-              <li className="flex items-start gap-3"><Mail size={16} className="text-gold mt-1 shrink-0" /> media@primehorizon.ae</li>
+              <li className="flex items-start gap-3"><Phone size={16} className="text-gold mt-1 shrink-0" /> +880 1700-000000</li>
+              <li className="flex items-start gap-3"><Mail size={16} className="text-gold mt-1 shrink-0" /> landmarkldltd@gmail.com</li>
+              <li className="flex items-start gap-3"><MapPin size={16} className="text-gold mt-1 shrink-0" /> 49 Siddique Tower, Mohakhali C/A, Dhaka 1212</li>
             </ul>
           </div>
           <div>
@@ -95,10 +93,13 @@ function Contact() {
 
       <section className="h-[420px] bg-secondary relative overflow-hidden">
         <iframe
-          title="Office location"
-          src="https://www.openstreetmap.org/export/embed.html?bbox=55.265%2C25.180%2C55.295%2C25.205&layer=mapnik"
-          className="w-full h-full grayscale"
+          title="Office location — Siddique Tower, Mohakhali, Dhaka"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d82611.61750202533!2d90.36427647882023!3d23.784717003047668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c771567dc1e9%3A0x299f1a6c628a2b78!2sSiddique%20Tower!5e0!3m2!1sen!2sbd!4v1780821453408!5m2!1sen!2sbd"
+          className="w-full h-full"
+          style={{ border: 0 }}
+          allowFullScreen
           loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
         />
       </section>
     </Layout>

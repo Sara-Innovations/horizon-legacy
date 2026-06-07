@@ -11,7 +11,7 @@ export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
       { title: "About — Md Shariful Islam Khandakar" },
-      { name: "description", content: "The journey, philosophy and leadership story of Md Shariful Islam Khandakar, MD & CEO of Prime Horizon Developments." },
+      { name: "description", content: "The journey, philosophy and leadership story of Md Shariful Islam Khandakar, MD & CEO of Landmark Group." },
       { property: "og:title", content: "About Md Shariful Islam Khandakar" },
       { property: "og:url", content: "/about" },
     ],
@@ -34,7 +34,7 @@ function About() {
           <div className="text-gold text-xs tracking-[0.3em] uppercase mb-3">Biography</div>
           <h2 className="text-3xl md:text-4xl font-display text-navy-deep mb-6">Mr. Md Shariful Islam Khandakar</h2>
           <div className="space-y-5 text-muted-foreground leading-relaxed">
-            <p>Md Shariful Islam Khandakar is the Managing Director and Chief Executive Officer of Prime Horizon Developments Ltd., one of the region's most respected real estate companies. Under his stewardship, the firm has grown into a multi-billion-dollar developer with a portfolio spanning the GCC and select international markets.</p>
+            <p>Md Shariful Islam Khandakar is the Managing Director and Chief Executive Officer of Landmark Group, one of the region's most respected real estate companies. Under his stewardship, the firm has grown into a multi-billion-dollar developer with a portfolio spanning the GCC and select international markets.</p>
             <p>With over 20 years in real estate, Shariful has led the delivery of more than 80 landmark residential, commercial and mixed-use projects. He is widely regarded as a thoughtful, principled leader whose work is defined by a deep commitment to sustainability, community and craft.</p>
             <p>Beyond business, Shariful serves on the boards of several industry councils and philanthropic foundations focused on education, urban innovation and climate.</p>
           </div>
