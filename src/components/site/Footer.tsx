@@ -33,9 +33,9 @@ export function Footer() {
         <div>
           <h4 className="text-white text-sm tracking-[0.2em] uppercase mb-4">Contact</h4>
           <ul className="space-y-3 text-sm text-white/70">
-            <li className="flex gap-2"><MapPin size={16} className="text-gold mt-0.5 shrink-0" /> Business Bay Tower, Downtown Business District, Dubai, UAE</li>
-            <li className="flex gap-2"><Phone size={16} className="text-gold shrink-0" /> +971 4 555 0199</li>
-            <li className="flex gap-2"><Mail size={16} className="text-gold shrink-0" /> office@primehorizon.ae</li>
+            <li className="flex gap-2"><MapPin size={16} className="text-gold mt-0.5 shrink-0" /> 49 Siddique Tower, Mohakhali C/A, Dhaka 1212, Bangladesh</li>
+            <li className="flex gap-2"><Phone size={16} className="text-gold shrink-0" /> +880 1700-000000</li>
+            <li className="flex gap-2"><Mail size={16} className="text-gold shrink-0" /> landmarkldltd@gmail.com</li>
           </ul>
         </div>
 
