@@ -77,13 +77,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Jonathan Harrison — Managing Director, Prime Horizon Developments" },
-      { name: "description", content: "Official portfolio of Jonathan Harrison, MD & CEO of Prime Horizon Developments Ltd. — building sustainable communities across the GCC." },
-      { name: "author", content: "Jonathan Harrison" },
-      { property: "og:title", content: "Jonathan Harrison — Managing Director & CEO" },
+      { title: "Md Shariful Islam Khandakar — Managing Director, Prime Horizon Developments" },
+      { name: "description", content: "Official portfolio of Md Shariful Islam Khandakar, MD & CEO of Prime Horizon Developments Ltd. — building sustainable communities across the GCC." },
+      { name: "author", content: "Md Shariful Islam Khandakar" },
+      { property: "og:title", content: "Md Shariful Islam Khandakar — Managing Director & CEO" },
       { property: "og:description", content: "Two decades of visionary leadership in luxury real estate development." },
       { property: "og:type", content: "website" },
-      { property: "og:site_name", content: "Jonathan Harrison" },
+      { property: "og:site_name", content: "Md Shariful Islam Khandakar" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [

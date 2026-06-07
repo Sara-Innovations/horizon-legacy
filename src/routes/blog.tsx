@@ -7,8 +7,8 @@ import { Search, ArrowRight } from "lucide-react";
 export const Route = createFileRoute("/blog")({
   head: () => ({
     meta: [
-      { title: "Insights & Journal — Jonathan Harrison" },
-      { name: "description", content: "Essays on real estate, sustainability, leadership and the future of cities by Jonathan Harrison." },
+      { title: "Insights & Journal — Md Shariful Islam Khandakar" },
+      { name: "description", content: "Essays on real estate, sustainability, leadership and the future of cities by Md Shariful Islam Khandakar." },
       { property: "og:url", content: "/blog" },
     ],
     links: [{ rel: "canonical", href: "/blog" }],
@@ -51,7 +51,7 @@ function Blog() {
               <div className="text-gold text-xs tracking-[0.3em] uppercase mb-3">Featured · {featured.category}</div>
               <h2 className="text-3xl md:text-4xl font-display text-navy-deep mb-4 group-hover:text-gold transition">{featured.title}</h2>
               <p className="text-muted-foreground mb-6">{featured.summary}</p>
-              <div className="text-xs text-muted-foreground tracking-wide">Jonathan Harrison · {featured.date}</div>
+              <div className="text-xs text-muted-foreground tracking-wide">Md Shariful Islam Khandakar · {featured.date}</div>
               <div className="mt-6 inline-flex items-center gap-2 text-navy-deep group-hover:text-gold text-sm">
                 Read article <ArrowRight size={14} />
               </div>
@@ -68,7 +68,7 @@ function Blog() {
               <div className="text-gold text-[10px] tracking-[0.3em] uppercase mb-2">{b.category}</div>
               <h3 className="font-display text-xl text-navy-deep mb-2 group-hover:text-gold transition">{b.title}</h3>
               <p className="text-sm text-muted-foreground mb-3">{b.summary}</p>
-              <div className="text-xs text-muted-foreground">Jonathan Harrison · {b.date}</div>
+              <div className="text-xs text-muted-foreground">Md Shariful Islam Khandakar · {b.date}</div>
             </article>
           ))}
         </div>

@@ -8,10 +8,10 @@ export function Footer() {
         <div>
           <div className="flex items-center gap-2 mb-4">
             <span className="w-10 h-10 rounded-sm bg-gradient-gold flex items-center justify-center font-display text-navy-deep font-bold">
-              JH
+              SK
             </span>
             <div>
-              <div className="font-display text-white">Jonathan Harrison</div>
+              <div className="font-display text-white">Md Shariful Islam Khandakar</div>
               <div className="text-[10px] tracking-[0.25em] uppercase text-gold">Managing Director</div>
             </div>
           </div>

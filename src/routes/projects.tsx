@@ -8,7 +8,7 @@ export const Route = createFileRoute("/projects")({
   head: () => ({
     meta: [
       { title: "Projects — Prime Horizon Portfolio" },
-      { name: "description", content: "A curated portfolio of landmark residential, commercial and mixed-use developments led by Jonathan Harrison." },
+      { name: "description", content: "A curated portfolio of landmark residential, commercial and mixed-use developments led by Md Shariful Islam Khandakar." },
       { property: "og:url", content: "/projects" },
     ],
     links: [{ rel: "canonical", href: "/projects" }],

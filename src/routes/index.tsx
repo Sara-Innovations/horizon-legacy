@@ -3,13 +3,14 @@ import { useEffect, useState } from "react";
 import { ArrowRight, Award, Building2, Users, TrendingUp, Quote, ChevronLeft, ChevronRight } from "lucide-react";
 import { Layout } from "@/components/site/Layout";
 import { projects, testimonials } from "@/data/site";
+import ownerPhoto from "@/assets/md-shariful.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Jonathan Harrison — MD & CEO, Prime Horizon Developments" },
+      { title: "Md Shariful Islam Khandakar — MD & CEO, Prime Horizon Developments" },
       { name: "description", content: "Building sustainable communities for future generations. Two decades of visionary real estate leadership across the GCC." },
-      { property: "og:title", content: "Jonathan Harrison — MD & CEO" },
+      { property: "og:title", content: "Md Shariful Islam Khandakar — MD & CEO" },
       { property: "og:description", content: "Building sustainable communities for future generations." },
       { property: "og:url", content: "/" },
     ],
@@ -74,14 +75,14 @@ function Home() {
               <span className="text-gold italic">Future Generations.</span>
             </h1>
             <p className="text-white/70 text-lg max-w-xl mb-10 leading-relaxed">
-              For over two decades, Jonathan Harrison has led the development of landmark residential, commercial and mixed-use destinations across the Gulf and beyond.
+              For over two decades, Md Shariful Islam Khandakar has led the development of landmark residential, commercial and mixed-use destinations across the Gulf and beyond.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link to="/projects" className="group inline-flex items-center gap-3 bg-gradient-gold text-navy-deep px-7 py-4 text-sm tracking-wide font-medium hover:shadow-luxe transition">
                 Explore Projects <ArrowRight size={16} className="group-hover:translate-x-1 transition" />
               </Link>
               <Link to="/about" className="inline-flex items-center gap-3 border border-white/30 text-white px-7 py-4 text-sm tracking-wide hover:bg-white/10 transition">
-                Meet Jonathan
+                Meet Shariful
               </Link>
             </div>
           </div>
@@ -90,9 +91,9 @@ function Home() {
             <div className="relative aspect-[4/5] max-w-md mx-auto">
               <div className="absolute -inset-4 bg-gradient-gold opacity-20 blur-3xl rounded-full" />
               <img
-                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=900&auto=format&fit=crop"
-                alt="Jonathan Harrison portrait"
-                className="relative w-full h-full object-cover shadow-luxe"
+                src={ownerPhoto.url}
+                alt="Md Shariful Islam Khandakar portrait"
+                className="relative w-full h-full object-cover object-top shadow-luxe"
               />
               <div className="absolute -bottom-6 -left-6 glass p-5 text-white">
                 <div className="text-[10px] tracking-[0.25em] uppercase text-gold mb-1">Since 2003</div>

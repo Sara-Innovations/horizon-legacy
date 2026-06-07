@@ -42,11 +42,11 @@ export function Header() {
       <div className="container-luxe flex items-center justify-between h-20">
         <Link to="/" className="flex items-center gap-2 group">
           <span className="w-9 h-9 rounded-sm bg-gradient-gold flex items-center justify-center font-display text-navy-deep font-bold">
-            JH
+            SK
           </span>
           <div className="hidden sm:block leading-tight">
             <div className={`font-display text-base ${scrolled ? (dark ? "text-white" : "text-navy-deep") : "text-white"}`}>
-              Jonathan Harrison
+              Md Shariful Islam Khandakar
             </div>
             <div className="text-[10px] tracking-[0.25em] uppercase text-gold">
               Prime Horizon
@@ -95,14 +95,17 @@ export function Header() {
       </div>
 
       {open && (
-        <div className="fixed inset-0 bg-navy-deep z-50 lg:hidden">
-          <div className="container-luxe flex items-center justify-between h-20 bg-navy-deep">
+        <div
+          className="fixed inset-0 z-[60] lg:hidden overflow-y-auto"
+          style={{ backgroundColor: "oklch(0.13 0.04 260)" }}
+        >
+          <div className="container-luxe flex items-center justify-between h-20">
             <span className="font-display text-white text-lg">Menu</span>
             <button onClick={() => setOpen(false)} className="text-white p-2" aria-label="Close menu">
               <X size={24} />
             </button>
           </div>
-          <nav className="container-luxe flex flex-col gap-1 mt-8">
+          <nav className="container-luxe flex flex-col gap-1 mt-8 pb-12">
             {nav.map((n) => (
               <Link
                 key={n.to}

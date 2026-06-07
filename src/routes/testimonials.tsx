@@ -7,7 +7,7 @@ export const Route = createFileRoute("/testimonials")({
   head: () => ({
     meta: [
       { title: "Testimonials — Voices of Trust" },
-      { name: "description", content: "What investors, homeowners and corporate clients say about Jonathan Harrison and Prime Horizon Developments." },
+      { name: "description", content: "What investors, homeowners and corporate clients say about Md Shariful Islam Khandakar and Prime Horizon Developments." },
       { property: "og:url", content: "/testimonials" },
     ],
     links: [{ rel: "canonical", href: "/testimonials" }],
