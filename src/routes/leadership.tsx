@@ -6,8 +6,8 @@ import { Award, Trophy, Heart, Users, TrendingUp, Newspaper } from "lucide-react
 export const Route = createFileRoute("/leadership")({
   head: () => ({
     meta: [
-      { title: "Leadership & Achievements — Jonathan Harrison" },
-      { name: "description", content: "Awards, recognitions, industry leadership and CSR initiatives of Jonathan Harrison and Prime Horizon Developments." },
+      { title: "Leadership & Achievements — Md Shariful Islam Khandakar" },
+      { name: "description", content: "Awards, recognitions, industry leadership and CSR initiatives of Md Shariful Islam Khandakar and Prime Horizon Developments." },
       { property: "og:url", content: "/leadership" },
     ],
     links: [{ rel: "canonical", href: "/leadership" }],
@@ -31,7 +31,7 @@ const csr = [
 ];
 
 const milestones = [
-  { year: "2018", value: "$2.4B", text: "AUM when Jonathan was appointed MD & CEO" },
+  { year: "2018", value: "$2.4B", text: "AUM when Shariful was appointed MD & CEO" },
   { year: "2026", value: "$12B+", text: "Current portfolio value, a 5× increase in eight years" },
   { year: "2030", value: "Net Zero", text: "Company-wide operational carbon target" },
 ];

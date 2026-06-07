@@ -6,8 +6,8 @@ import { MapPin, Phone, Mail, Send, Linkedin, Twitter, Instagram } from "lucide-
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Jonathan Harrison" },
-      { name: "description", content: "Get in touch with the office of Jonathan Harrison, MD & CEO of Prime Horizon Developments." },
+      { title: "Contact — Md Shariful Islam Khandakar" },
+      { name: "description", content: "Get in touch with the office of Md Shariful Islam Khandakar, MD & CEO of Prime Horizon Developments." },
       { property: "og:url", content: "/contact" },
     ],
     links: [{ rel: "canonical", href: "/contact" }],
@@ -25,7 +25,7 @@ function Contact() {
   const [sent, setSent] = useState(false);
   return (
     <Layout>
-      <PageHeader eyebrow="Contact" title="Start a Conversation" subtitle="For partnership, investment and media enquiries, please reach out to the office of Jonathan Harrison." />
+      <PageHeader eyebrow="Contact" title="Start a Conversation" subtitle="For partnership, investment and media enquiries, please reach out to the office of Md Shariful Islam Khandakar." />
 
       <section className="py-24 container-luxe grid lg:grid-cols-5 gap-16">
         <div className="lg:col-span-2 space-y-8">

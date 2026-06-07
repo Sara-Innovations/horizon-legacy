@@ -11,7 +11,7 @@ export function Footer() {
               JH
             </span>
             <div>
-              <div className="font-display text-white">Jonathan Harrison</div>
+              <div className="font-display text-white">Md Shariful Islam Khandakar</div>
               <div className="text-[10px] tracking-[0.25em] uppercase text-gold">Managing Director</div>
             </div>
           </div>

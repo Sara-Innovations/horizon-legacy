@@ -6,9 +6,9 @@ import { GraduationCap, Award } from "lucide-react";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Jonathan Harrison" },
-      { name: "description", content: "The journey, philosophy and leadership story of Jonathan Harrison, MD & CEO of Prime Horizon Developments." },
-      { property: "og:title", content: "About Jonathan Harrison" },
+      { title: "About — Md Shariful Islam Khandakar" },
+      { name: "description", content: "The journey, philosophy and leadership story of Md Shariful Islam Khandakar, MD & CEO of Prime Horizon Developments." },
+      { property: "og:title", content: "About Md Shariful Islam Khandakar" },
       { property: "og:url", content: "/about" },
     ],
     links: [{ rel: "canonical", href: "/about" }],
@@ -24,15 +24,15 @@ function About() {
       {/* BIO */}
       <section className="py-24 container-luxe grid md:grid-cols-5 gap-12 items-center">
         <div className="md:col-span-2">
-          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=900" alt="Jonathan Harrison" className="w-full aspect-[4/5] object-cover shadow-luxe" />
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=900" alt="Md Shariful Islam Khandakar" className="w-full aspect-[4/5] object-cover shadow-luxe" />
         </div>
         <div className="md:col-span-3">
           <div className="text-gold text-xs tracking-[0.3em] uppercase mb-3">Biography</div>
-          <h2 className="text-3xl md:text-4xl font-display text-navy-deep mb-6">Mr. Jonathan Harrison</h2>
+          <h2 className="text-3xl md:text-4xl font-display text-navy-deep mb-6">Mr. Md Shariful Islam Khandakar</h2>
           <div className="space-y-5 text-muted-foreground leading-relaxed">
-            <p>Jonathan Harrison is the Managing Director and Chief Executive Officer of Prime Horizon Developments Ltd., one of the region's most respected real estate companies. Under his stewardship, the firm has grown into a multi-billion-dollar developer with a portfolio spanning the GCC and select international markets.</p>
-            <p>With over 20 years in real estate, Jonathan has led the delivery of more than 80 landmark residential, commercial and mixed-use projects. He is widely regarded as a thoughtful, principled leader whose work is defined by a deep commitment to sustainability, community and craft.</p>
-            <p>Beyond business, Jonathan serves on the boards of several industry councils and philanthropic foundations focused on education, urban innovation and climate.</p>
+            <p>Md Shariful Islam Khandakar is the Managing Director and Chief Executive Officer of Prime Horizon Developments Ltd., one of the region's most respected real estate companies. Under his stewardship, the firm has grown into a multi-billion-dollar developer with a portfolio spanning the GCC and select international markets.</p>
+            <p>With over 20 years in real estate, Shariful has led the delivery of more than 80 landmark residential, commercial and mixed-use projects. He is widely regarded as a thoughtful, principled leader whose work is defined by a deep commitment to sustainability, community and craft.</p>
+            <p>Beyond business, Shariful serves on the boards of several industry councils and philanthropic foundations focused on education, urban innovation and climate.</p>
           </div>
         </div>
       </section>
@@ -110,7 +110,7 @@ function About() {
         <div className="container-luxe max-w-3xl text-center">
           <div className="text-gold text-xs tracking-[0.3em] uppercase mb-3">A Personal Note</div>
           <h2 className="text-3xl md:text-4xl font-display text-navy-deep italic">"We do not build buildings. We build the places where people will fall in love, raise families, start companies and remember the most important moments of their lives. That is the privilege — and the duty — of our profession."</h2>
-          <div className="mt-8 font-display text-navy-deep">— Jonathan Harrison</div>
+          <div className="mt-8 font-display text-navy-deep">— Md Shariful Islam Khandakar</div>
         </div>
       </section>
     </Layout>

@@ -6,8 +6,8 @@ import { Play, ExternalLink } from "lucide-react";
 export const Route = createFileRoute("/media")({
   head: () => ({
     meta: [
-      { title: "Media & Press — Jonathan Harrison" },
-      { name: "description", content: "News, interviews, keynotes and press features of Jonathan Harrison." },
+      { title: "Media & Press — Md Shariful Islam Khandakar" },
+      { name: "description", content: "News, interviews, keynotes and press features of Md Shariful Islam Khandakar." },
       { property: "og:url", content: "/media" },
     ],
     links: [{ rel: "canonical", href: "/media" }],

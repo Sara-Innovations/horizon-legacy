@@ -14,10 +14,10 @@ export const projects = [
 ];
 
 export const testimonials = [
-  { name: "Sarah Al-Mansoori", role: "Private Investor", quote: "Jonathan's clarity of vision and unwavering integrity make him a rare leader. Every project he touches becomes a landmark.", image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200" },
+  { name: "Sarah Al-Mansoori", role: "Private Investor", quote: "Shariful's clarity of vision and unwavering integrity make him a rare leader. Every project he touches becomes a landmark.", image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200" },
   { name: "Daniel Whitmore", role: "CEO, Whitmore Capital", quote: "Working with Prime Horizon has been transformative. They deliver beyond expectations, on time and to the highest standard.", image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200" },
   { name: "Aisha Rahman", role: "Homeowner, Azure Heights", quote: "Our home is more than a residence – it is a sanctuary. Every detail reflects extraordinary craftsmanship.", image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200" },
-  { name: "Michael Chen", role: "Managing Partner, Chen & Wright", quote: "Jonathan combines strategic brilliance with genuine humility. A true statesman of the industry.", image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200" },
+  { name: "Michael Chen", role: "Managing Partner, Chen & Wright", quote: "Shariful combines strategic brilliance with genuine humility. A true statesman of the industry.", image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200" },
   { name: "Layla Hassan", role: "Director, Hassan Group", quote: "Prime Horizon's commitment to sustainable communities sets a new benchmark for the region.", image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200" },
   { name: "Rajesh Patel", role: "Corporate Tenant, Meridian Tower", quote: "The workplace experience they have crafted is simply best-in-class – it has elevated our entire culture.", image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200" },
 ];

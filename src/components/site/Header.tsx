@@ -46,7 +46,7 @@ export function Header() {
           </span>
           <div className="hidden sm:block leading-tight">
             <div className={`font-display text-base ${scrolled ? (dark ? "text-white" : "text-navy-deep") : "text-white"}`}>
-              Jonathan Harrison
+              Md Shariful Islam Khandakar
             </div>
             <div className="text-[10px] tracking-[0.25em] uppercase text-gold">
               Prime Horizon
