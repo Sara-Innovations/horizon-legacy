@@ -1,7 +1,16 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useRef, useState } from "react";
+import { useInView } from "@/hooks/use-in-view";
 import { ArrowRight, Award, Building2, Users, TrendingUp, Quote, ChevronLeft, ChevronRight } from "lucide-react";
+
+const HomeBuildings3D = lazy(() =>
+  import("@/components/site/HomeBuildings3D").then((m) => ({ default: m.HomeBuildings3D })),
+);
+const Apartment3D = lazy(() =>
+  import("@/components/site/Apartment3D").then((m) => ({ default: m.Apartment3D })),
+);
 import { Layout } from "@/components/site/Layout";
+import { CtaBackgroundVideo } from "@/components/site/CtaBackgroundVideo";
 import { projects, testimonials } from "@/data/site";
 import ownerPhoto from "@/assets/owner.jpeg";
 
@@ -71,9 +80,25 @@ function Counter({
   );
 }
 
+const skylinePlaceholder = (
+  <div className="w-full h-[480px] md:h-[560px] lg:h-[620px] rounded-sm bg-[#0a1428] border border-border flex items-center justify-center text-muted-foreground text-sm tracking-[0.3em] uppercase">
+    3D Skyline
+  </div>
+);
+
+const apartmentPlaceholder = (
+  <div className="w-full h-[420px] md:h-[520px] lg:h-[580px] rounded-sm bg-[#eef1f5] border border-border flex items-center justify-center text-muted-foreground text-sm tracking-[0.3em] uppercase">
+    3D Floor Plan
+  </div>
+);
+
 function Home() {
   const featured = projects.slice(0, 4);
   const [idx, setIdx] = useState(0);
+  const skylineRef = useRef<HTMLDivElement>(null);
+  const apartmentRef = useRef<HTMLDivElement>(null);
+  const showSkyline = useInView(skylineRef, "100px");
+  const showApartment = useInView(apartmentRef, "100px");
   useEffect(() => {
     const i = setInterval(() => setIdx((v) => (v + 1) % testimonials.length), 6000);
     return () => clearInterval(i);
@@ -149,8 +174,91 @@ function Home() {
         </div>
       </section>
 
+      {/* 3D BUILDINGS */}
+      <section className="py-24 bg-background">
+        <div className="container-luxe">
+          <div className="grid lg:grid-cols-12 gap-12 items-center mb-12">
+            <div className="lg:col-span-5">
+              <div className="text-gold text-xs tracking-[0.3em] uppercase mb-3">
+                Architectural Vision
+              </div>
+              <h2 className="text-4xl md:text-5xl font-display text-foreground leading-tight mb-6">
+                Landmark developments,{" "}
+                <span className="italic text-gold">brought to life in 3D.</span>
+              </h2>
+              <p className="text-muted-foreground leading-relaxed">
+                Drag, pinch or scroll to explore our portfolio — residential towers, commercial
+                landmarks and mixed-use destinations across Bangladesh in real-time 3D.
+              </p>
+            </div>
+            <div ref={skylineRef} className="lg:col-span-7">
+              {showSkyline ? (
+                <Suspense
+                  fallback={
+                    <div className="w-full h-[480px] md:h-[560px] lg:h-[620px] rounded-sm bg-navy-deep/40 animate-pulse flex items-center justify-center text-muted-foreground text-sm tracking-[0.3em] uppercase">
+                      Loading 3D Skyline…
+                    </div>
+                  }
+                >
+                  <HomeBuildings3D />
+                </Suspense>
+              ) : (
+                skylinePlaceholder
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 3D APARTMENT FLOOR PLAN */}
+      <section className="py-24 bg-secondary">
+        <div className="container-luxe">
+          <div className="grid lg:grid-cols-12 gap-12 items-center">
+            <div ref={apartmentRef} className="lg:col-span-7 order-2 lg:order-1">
+              {showApartment ? (
+                <Suspense
+                  fallback={
+                    <div className="w-full h-[420px] md:h-[520px] lg:h-[580px] rounded-sm bg-background animate-pulse flex items-center justify-center text-muted-foreground text-sm tracking-[0.3em] uppercase">
+                      Loading Floor Plan…
+                    </div>
+                  }
+                >
+                  <Apartment3D />
+                </Suspense>
+              ) : (
+                apartmentPlaceholder
+              )}
+            </div>
+            <div className="lg:col-span-5 order-1 lg:order-2">
+              <div className="text-gold text-xs tracking-[0.3em] uppercase mb-3">
+                Interior Experience
+              </div>
+              <h2 className="text-4xl md:text-5xl font-display text-foreground leading-tight mb-6">
+                Step inside a{" "}
+                <span className="italic text-gold">Landmark residence.</span>
+              </h2>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                Explore a one-bedroom apartment in interactive 3D — bathroom, dining, kitchen,
+                living room and bedroom laid out exactly as residents experience them.
+              </p>
+              <ul className="space-y-3 text-sm text-muted-foreground">
+                <li className="flex gap-3">
+                  <span className="text-gold">◆</span> Drag with mouse to rotate the view
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-gold">◆</span> Pinch or scroll to zoom on touch devices
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-gold">◆</span> Cutaway dollhouse view of every room
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* STATS */}
-      <section className="py-20 bg-secondary">
+      <section className="py-20 bg-background">
         <div className="container-luxe grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((s) => (
             <div key={s.label} className="text-center">
@@ -291,15 +399,13 @@ function Home() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 bg-gradient-hero text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <img
-            src="https://images.unsplash.com/photo-1577495508048-b635879837f1?w=1600"
-            alt=""
-            className="w-full h-full object-cover"
-          />
+      <section className="py-24 text-white relative overflow-hidden">
+        <div className="absolute inset-0">
+          <CtaBackgroundVideo />
+          <div className="absolute inset-0 bg-navy-deep/65" />
+          <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/30 to-navy-deep/50" />
         </div>
-        <div className="container-luxe relative text-center max-w-3xl">
+        <div className="container-luxe relative mx-auto text-center max-w-3xl">
           <div className="text-gold text-xs tracking-[0.3em] uppercase mb-4">
             Let's Build Together
           </div>

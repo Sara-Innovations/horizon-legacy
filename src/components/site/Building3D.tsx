@@ -1,8 +1,8 @@
-import { Suspense, useRef, useState, useMemo, useEffect } from "react";
-import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { OrbitControls, Environment, ContactShadows, Html, Float, Sparkles, Stars } from "@react-three/drei";
+import { useLayoutEffect, useMemo, useRef, useState } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { OrbitControls, Html } from "@react-three/drei";
 import * as THREE from "three";
-import gsap from "gsap";
+import { useInView } from "@/hooks/use-in-view";
 
 type Hotspot = {
   id: string;
@@ -19,44 +19,41 @@ const HOTSPOTS: Hotspot[] = [
   { id: "parking", label: "Smart Parking", desc: "Automated EV-ready underground parking.", position: [-1.4, -1.8, 1.2] },
 ];
 
+const SKYLINE = Array.from({ length: 14 }, (_, i) => ({
+  x: (i - 7) * 2.2 + Math.sin(i) * 1.2,
+  h: 1.5 + Math.abs(Math.sin(i * 1.5)) * 5,
+  z: -12 - Math.abs(Math.cos(i)) * 3,
+  w: 1 + Math.abs(Math.cos(i)) * 0.5,
+}));
+
 function Tower({ night, onHover }: { night: boolean; onHover: (h: Hotspot | null) => void }) {
   const group = useRef<THREE.Group>(null!);
   const auto = useRef(true);
-  const { camera } = useThree();
 
-  // Auto-rotate when idle
   useFrame((_, dt) => {
-    if (auto.current && group.current) group.current.rotation.y += dt * 0.15;
+    if (auto.current && group.current) group.current.rotation.y += dt * 0.12;
   });
 
-  // Cinematic camera intro
-  useEffect(() => {
-    camera.position.set(14, 8, 14);
-    gsap.to(camera.position, { x: 7, y: 4, z: 8, duration: 2.4, ease: "power3.out" });
-  }, [camera]);
-
-  const floors = useMemo(() => Array.from({ length: 22 }, (_, i) => i), []);
   const glass = useMemo(
     () =>
-      new THREE.MeshPhysicalMaterial({
-        color: night ? "#0a1b3a" : "#7fb8ff",
-        metalness: 0.9,
-        roughness: 0.08,
-        transmission: 0.5,
-        thickness: 0.6,
-        envMapIntensity: 1.4,
-        emissive: night ? "#1d3a72" : "#000000",
-        emissiveIntensity: night ? 0.35 : 0,
+      new THREE.MeshStandardMaterial({
+        color: night ? "#1a3568" : "#6aaddf",
+        metalness: 0.7,
+        roughness: 0.2,
+        emissive: night ? "#1d3a72" : "#102040",
+        emissiveIntensity: night ? 0.45 : 0.12,
       }),
-    [night]
+    [night],
   );
+
   const frame = useMemo(
-    () => new THREE.MeshStandardMaterial({ color: "#d4af37", metalness: 1, roughness: 0.3 }),
-    []
+    () => new THREE.MeshStandardMaterial({ color: "#d4af37", metalness: 0.9, roughness: 0.35 }),
+    [],
   );
+
   const concrete = useMemo(
-    () => new THREE.MeshStandardMaterial({ color: "#1a2440", metalness: 0.3, roughness: 0.7 }),
-    []
+    () => new THREE.MeshStandardMaterial({ color: "#1a2440", roughness: 0.8 }),
+    [],
   );
 
   return (
@@ -66,62 +63,35 @@ function Tower({ night, onHover }: { night: boolean; onHover: (h: Hotspot | null
       onPointerEnter={() => (auto.current = false)}
       onPointerLeave={() => (auto.current = true)}
     >
-      {/* Podium */}
-      <mesh position={[0, -2.5, 0]} material={concrete} castShadow receiveShadow>
+      <mesh position={[0, -2.5, 0]} material={concrete}>
         <boxGeometry args={[5, 1, 5]} />
       </mesh>
-      <mesh position={[0, -1.85, 0]} material={frame} castShadow>
+      <mesh position={[0, -1.85, 0]} material={frame}>
         <boxGeometry args={[5.1, 0.1, 5.1]} />
       </mesh>
 
-      {/* Main tower stacked floors */}
-      {floors.map((i) => {
-        const taper = 1 - i * 0.018;
-        const y = -1.3 + i * 0.45;
-        return (
-          <group key={i} position={[0, y, 0]}>
-            <mesh material={glass} castShadow>
-              <boxGeometry args={[2.4 * taper, 0.4, 2.4 * taper]} />
-            </mesh>
-            <mesh material={frame} position={[0, 0.22, 0]}>
-              <boxGeometry args={[2.45 * taper, 0.04, 2.45 * taper]} />
-            </mesh>
-          </group>
-        );
-      })}
+      <mesh position={[0, 3.2, 0]} material={glass}>
+        <boxGeometry args={[2.4, 9.2, 2.4]} />
+      </mesh>
+      <mesh position={[0, 8.1, 0]} material={frame}>
+        <boxGeometry args={[2.5, 0.08, 2.5]} />
+      </mesh>
 
-      {/* Side annex */}
-      <mesh material={glass} position={[1.7, -0.5, 0]} castShadow>
+      <mesh material={glass} position={[1.7, -0.5, 0]}>
         <boxGeometry args={[1, 3.8, 2.2]} />
       </mesh>
-      <mesh material={glass} position={[-1.7, -1, 0]} castShadow>
+      <mesh material={glass} position={[-1.7, -1, 0]}>
         <boxGeometry args={[1, 2.8, 2.2]} />
       </mesh>
 
-      {/* Rooftop garden */}
-      <mesh position={[0, 8.95, 0]} castShadow>
-        <cylinderGeometry args={[1.1, 1.1, 0.15, 24]} />
+      <mesh position={[0, 8.95, 0]}>
+        <cylinderGeometry args={[1.1, 1.1, 0.15, 16]} />
         <meshStandardMaterial color="#3f7a4a" roughness={0.9} />
       </mesh>
-      <mesh position={[0, 9.3, 0]} material={frame} castShadow>
+      <mesh position={[0, 9.3, 0]} material={frame}>
         <coneGeometry args={[0.15, 0.7, 6]} />
       </mesh>
 
-      {/* Window glow at night */}
-      {night &&
-        floors.map((i) =>
-          [-1, 1].map((s) => (
-            <pointLight
-              key={`l${i}-${s}`}
-              position={[s * 1.1, -1.3 + i * 0.45, 1.1]}
-              intensity={0.06}
-              color="#ffd27a"
-              distance={2}
-            />
-          ))
-        )}
-
-      {/* Hotspots */}
       {HOTSPOTS.map((h) => (
         <Hotspot3D key={h.id} h={h} onHover={onHover} />
       ))}
@@ -133,28 +103,22 @@ function Hotspot3D({ h, onHover }: { h: Hotspot; onHover: (h: Hotspot | null) =>
   const [hover, setHover] = useState(false);
   return (
     <group position={h.position}>
-      <Float speed={2} rotationIntensity={0} floatIntensity={0.4}>
-        <mesh
-          onPointerOver={(e) => {
-            e.stopPropagation();
-            setHover(true);
-            onHover(h);
-            document.body.style.cursor = "pointer";
-          }}
-          onPointerOut={() => {
-            setHover(false);
-            onHover(null);
-            document.body.style.cursor = "auto";
-          }}
-        >
-          <sphereGeometry args={[0.12, 16, 16]} />
-          <meshBasicMaterial color="#d4af37" />
-        </mesh>
-        <mesh>
-          <ringGeometry args={[0.18, 0.22, 32]} />
-          <meshBasicMaterial color="#d4af37" transparent opacity={hover ? 0.9 : 0.45} side={THREE.DoubleSide} />
-        </mesh>
-      </Float>
+      <mesh
+        onPointerOver={(e) => {
+          e.stopPropagation();
+          setHover(true);
+          onHover(h);
+          document.body.style.cursor = "pointer";
+        }}
+        onPointerOut={() => {
+          setHover(false);
+          onHover(null);
+          document.body.style.cursor = "auto";
+        }}
+      >
+        <sphereGeometry args={[0.12, 12, 12]} />
+        <meshBasicMaterial color="#d4af37" />
+      </mesh>
       {hover && (
         <Html distanceFactor={8} position={[0.3, 0.3, 0]} style={{ pointerEvents: "none" }}>
           <div className="bg-navy-deep/95 border border-gold/40 text-white px-3 py-2 text-xs whitespace-nowrap shadow-luxe backdrop-blur">
@@ -167,81 +131,89 @@ function Hotspot3D({ h, onHover }: { h: Hotspot; onHover: (h: Hotspot | null) =>
   );
 }
 
-function Skyline({ night }: { night: boolean }) {
-  const bldgs = useMemo(
-    () =>
-      Array.from({ length: 30 }, (_, i) => ({
-        x: (i - 15) * 2.2 + (Math.sin(i) * 1.5),
-        h: 2 + Math.abs(Math.sin(i * 1.7)) * 6,
-        z: -12 - Math.abs(Math.cos(i)) * 4,
-        w: 1.2 + Math.abs(Math.cos(i)) * 0.5,
-      })),
-    []
-  );
+function SkylineInstances({ night }: { night: boolean }) {
+  const ref = useRef<THREE.InstancedMesh>(null!);
+  const temp = useMemo(() => new THREE.Object3D(), []);
+
+  useLayoutEffect(() => {
+    const mesh = ref.current;
+    if (!mesh) return;
+    SKYLINE.forEach((b, i) => {
+      temp.position.set(b.x, b.h / 2 - 3, b.z);
+      temp.scale.set(b.w, b.h, b.w);
+      temp.updateMatrix();
+      mesh.setMatrixAt(i, temp.matrix);
+    });
+    mesh.instanceMatrix.needsUpdate = true;
+  }, [temp]);
+
   return (
-    <group>
-      {bldgs.map((b, i) => (
-        <mesh key={i} position={[b.x, b.h / 2 - 3, b.z]}>
-          <boxGeometry args={[b.w, b.h, b.w]} />
-          <meshStandardMaterial
-            color={night ? "#0a142b" : "#2a3a5c"}
-            emissive={night ? "#1a2b55" : "#000"}
-            emissiveIntensity={night ? 0.3 : 0}
-            roughness={0.6}
-          />
-        </mesh>
-      ))}
-    </group>
+    <instancedMesh ref={ref} args={[undefined, undefined, SKYLINE.length]}>
+      <boxGeometry args={[1, 1, 1]} />
+      <meshStandardMaterial
+        color={night ? "#0a142b" : "#2a3a5c"}
+        emissive={night ? "#1a2b55" : "#000000"}
+        emissiveIntensity={night ? 0.3 : 0}
+        roughness={0.7}
+      />
+    </instancedMesh>
+  );
+}
+
+function Scene({ night, onHover }: { night: boolean; onHover: (h: Hotspot | null) => void }) {
+  return (
+    <>
+      <ambientLight intensity={night ? 0.25 : 0.45} />
+      <directionalLight
+        position={night ? [-8, 6, -4] : [10, 12, 6]}
+        intensity={night ? 0.5 : 1}
+        color={night ? "#7ea2ff" : "#fff2d6"}
+      />
+      <pointLight position={[0, 8, 0]} intensity={night ? 0.6 : 0.3} color="#d4af37" />
+      <Tower night={night} onHover={onHover} />
+      <SkylineInstances night={night} />
+    </>
   );
 }
 
 export function Building3D() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const inView = useInView(containerRef, "80px");
   const [night, setNight] = useState(false);
   const [active, setActive] = useState<Hotspot | null>(null);
 
   return (
-    <div className="relative w-full h-[520px] md:h-[620px] rounded-sm overflow-hidden bg-gradient-hero">
-      <Canvas
-        shadows
-        dpr={[1, 1.6]}
-        camera={{ position: [7, 4, 8], fov: 45 }}
-        gl={{ antialias: true, powerPreference: "high-performance" }}
-      >
-        <color attach="background" args={[night ? "#050914" : "#13243f"]} />
-        <fog attach="fog" args={[night ? "#050914" : "#13243f", 18, 45]} />
+    <div
+      ref={containerRef}
+      className="relative w-full h-[520px] md:h-[620px] rounded-sm overflow-hidden bg-gradient-hero touch-none"
+    >
+      {!inView && (
+        <div className="absolute inset-0 flex items-center justify-center text-white/30 text-xs tracking-[0.3em] uppercase">
+          3D Experience
+        </div>
+      )}
 
-        {/* Lighting */}
-        <ambientLight intensity={night ? 0.15 : 0.35} />
-        <directionalLight
-          position={night ? [-8, 6, -4] : [10, 14, 6]}
-          intensity={night ? 0.4 : 1.3}
-          color={night ? "#7ea2ff" : "#fff2d6"}
-          castShadow
-          shadow-mapSize={[1024, 1024]}
-        />
-        <pointLight position={[0, 8, 0]} intensity={night ? 1.2 : 0.4} color="#d4af37" />
+      {inView && (
+        <Canvas
+          dpr={[1, 1.25]}
+          camera={{ position: [7, 4, 8], fov: 45 }}
+          gl={{ antialias: false, powerPreference: "high-performance" }}
+        >
+          <color attach="background" args={[night ? "#050914" : "#13243f"]} />
+          <fog attach="fog" args={[night ? "#050914" : "#13243f", 18, 42]} />
+          <Scene night={night} onHover={setActive} />
+          <OrbitControls
+            enablePan={false}
+            minDistance={6}
+            maxDistance={18}
+            minPolarAngle={Math.PI / 6}
+            maxPolarAngle={Math.PI / 2.1}
+            enableDamping
+            dampingFactor={0.08}
+          />
+        </Canvas>
+      )}
 
-        <Suspense fallback={null}>
-          <Environment preset={night ? "night" : "sunset"} />
-          <Tower night={night} onHover={setActive} />
-          <Skyline night={night} />
-          {night && <Stars radius={60} depth={40} count={2000} factor={3} fade speed={1} />}
-          <Sparkles count={60} scale={14} size={2} speed={0.3} color={night ? "#ffd27a" : "#ffffff"} />
-          <ContactShadows position={[0, -3, 0]} opacity={0.55} blur={2.2} far={10} resolution={512} />
-        </Suspense>
-
-        <OrbitControls
-          enablePan={false}
-          minDistance={6}
-          maxDistance={18}
-          minPolarAngle={Math.PI / 6}
-          maxPolarAngle={Math.PI / 2.1}
-          enableDamping
-          dampingFactor={0.08}
-        />
-      </Canvas>
-
-      {/* Overlay UI */}
       <div className="absolute top-4 left-4 flex items-center gap-2 text-[10px] tracking-[0.25em] uppercase text-white/80">
         <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
         Interactive 3D · Drag · Zoom

@@ -16,15 +16,29 @@ export const Route = createFileRoute("/media")({
 });
 
 const videos = [
-  { title: "Keynote — REHAB Fair 2026, Dhaka", thumb: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=900" },
-  { title: "Interview with Channel i", thumb: "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=900" },
-  { title: "Inside Landmark Group — Mohakhali HQ Tour", thumb: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=900" },
+  {
+    title: "Employee Recognition Ceremony — Mohakhali Corporate Office",
+    thumb: "/images/3.jpg",
+  },
+  {
+    title: "Team Appreciation Event at Landmark Group HQ",
+    thumb: "/images/4.jpg",
+  },
+  {
+    title: "Gift Presentation & Team Celebration — Siddique Tower",
+    thumb: "/images/2.jpg",
+  },
 ];
 
 function Media() {
   return (
     <Layout>
-      <PageHeader eyebrow="Media & Press" title="In the Spotlight" subtitle="Selected features, interviews and public appearances." />
+      <PageHeader
+        eyebrow="Media & Press"
+        title="In the Spotlight"
+        subtitle="News, events and milestones from Landmark Group's Mohakhali corporate office and projects nationwide."
+        image="/images/9.jpg"
+      />
 
       <section className="py-24 container-luxe">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

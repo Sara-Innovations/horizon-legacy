@@ -58,7 +58,7 @@ function About() {
             <ul className="space-y-3 text-sm text-white/70">
               <li className="flex gap-3"><span className="text-gold">◆</span> Hover the glowing markers to reveal each zone of the development.</li>
               <li className="flex gap-3"><span className="text-gold">◆</span> Drag to rotate · scroll to zoom · toggle Day / Night.</li>
-              <li className="flex gap-3"><span className="text-gold">◆</span> Real-time lighting, glass reflections and HDR environment.</li>
+              <li className="flex gap-3"><span className="text-gold">◆</span> Explore zones with interactive markers across the development.</li>
             </ul>
           </div>
           <div className="lg:col-span-7">

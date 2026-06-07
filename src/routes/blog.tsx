@@ -28,7 +28,12 @@ function Blog() {
 
   return (
     <Layout>
-      <PageHeader eyebrow="Insights" title="The Journal" subtitle="Perspectives on real estate, sustainability and the cities of tomorrow." />
+      <PageHeader
+        eyebrow="Insights"
+        title="The Journal"
+        subtitle="Stories from Landmark Group and Landmark Town Limited — projects, people and places across Bangladesh."
+        image="/images/10.jpg"
+      />
 
       <section className="py-16 container-luxe">
         <div className="max-w-md mx-auto relative mb-14">
