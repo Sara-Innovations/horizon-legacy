@@ -77,8 +77,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Md Shariful Islam Khandakar — Managing Director, Prime Horizon Developments" },
-      { name: "description", content: "Official portfolio of Md Shariful Islam Khandakar, MD & CEO of Prime Horizon Developments Ltd. — building sustainable communities across the GCC." },
+      { title: "Md Shariful Islam Khandakar — Managing Director, Landmark Group" },
+      { name: "description", content: "Official portfolio of Md Shariful Islam Khandakar, MD & CEO of Landmark Group — building sustainable communities across the GCC." },
       { name: "author", content: "Md Shariful Islam Khandakar" },
       { property: "og:title", content: "Md Shariful Islam Khandakar — Managing Director & CEO" },
       { property: "og:description", content: "Two decades of visionary leadership in luxury real estate development." },

@@ -7,7 +7,7 @@ export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Contact — Md Shariful Islam Khandakar" },
-      { name: "description", content: "Get in touch with the office of Md Shariful Islam Khandakar, MD & CEO of Prime Horizon Developments." },
+      { name: "description", content: "Get in touch with the office of Md Shariful Islam Khandakar, MD & CEO of Landmark Group." },
       { property: "og:url", content: "/contact" },
     ],
     links: [{ rel: "canonical", href: "/contact" }],
@@ -16,7 +16,7 @@ export const Route = createFileRoute("/contact")({
 });
 
 const offices = [
-  { city: "Dubai (HQ)", lines: ["Prime Horizon Developments Ltd.", "Business Bay Tower, 42nd Floor", "Downtown Business District", "Dubai, UAE"] },
+  { city: "Dubai (HQ)", lines: ["Landmark Group", "Business Bay Tower, 42nd Floor", "Downtown Business District", "Dubai, UAE"] },
   { city: "Riyadh", lines: ["King Fahd Road, Olaya Tower", "12th Floor", "Riyadh, Kingdom of Saudi Arabia"] },
   { city: "London", lines: ["8 Berkeley Square", "Mayfair", "London W1J 6DB, United Kingdom"] },
 ];

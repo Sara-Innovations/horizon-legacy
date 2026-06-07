@@ -49,7 +49,7 @@ export function Header() {
               Md Shariful Islam Khandakar
             </div>
             <div className="text-[10px] tracking-[0.25em] uppercase text-gold">
-              Prime Horizon
+              Landmark Group
             </div>
           </div>
         </Link>

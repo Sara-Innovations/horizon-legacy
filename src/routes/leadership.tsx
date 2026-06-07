@@ -7,7 +7,7 @@ export const Route = createFileRoute("/leadership")({
   head: () => ({
     meta: [
       { title: "Leadership & Achievements — Md Shariful Islam Khandakar" },
-      { name: "description", content: "Awards, recognitions, industry leadership and CSR initiatives of Md Shariful Islam Khandakar and Prime Horizon Developments." },
+      { name: "description", content: "Awards, recognitions, industry leadership and CSR initiatives of Md Shariful Islam Khandakar and Landmark Group." },
       { property: "og:url", content: "/leadership" },
     ],
     links: [{ rel: "canonical", href: "/leadership" }],

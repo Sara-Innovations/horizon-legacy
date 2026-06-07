@@ -52,7 +52,7 @@ export function Footer() {
       </div>
       <div className="border-t border-white/10">
         <div className="container-luxe py-6 flex flex-col md:flex-row justify-between gap-2 text-xs text-white/50">
-          <span>© {new Date().getFullYear()} Prime Horizon Developments Ltd. All rights reserved.</span>
+          <span>© {new Date().getFullYear()} Landmark Group All rights reserved.</span>
           <span>Crafted with vision and precision.</span>
         </div>
       </div>

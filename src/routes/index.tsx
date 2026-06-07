@@ -8,7 +8,7 @@ import ownerPhoto from "@/assets/md-shariful.jpg.asset.json";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Md Shariful Islam Khandakar — MD & CEO, Prime Horizon Developments" },
+      { title: "Md Shariful Islam Khandakar — MD & CEO, Landmark Group" },
       { name: "description", content: "Building sustainable communities for future generations. Two decades of visionary real estate leadership across the GCC." },
       { property: "og:title", content: "Md Shariful Islam Khandakar — MD & CEO" },
       { property: "og:description", content: "Building sustainable communities for future generations." },
@@ -68,7 +68,7 @@ function Home() {
         <div className="container-luxe relative grid lg:grid-cols-12 gap-12 items-center pt-28 pb-20">
           <div className="lg:col-span-7 text-white animate-fade-up">
             <div className="text-gold text-xs tracking-[0.3em] uppercase mb-6">
-              Managing Director & CEO · Prime Horizon Developments
+              Managing Director & CEO · Landmark Group
             </div>
             <h1 className="text-5xl md:text-7xl leading-[1.05] font-display mb-6">
               Building Sustainable<br />Communities for<br />
