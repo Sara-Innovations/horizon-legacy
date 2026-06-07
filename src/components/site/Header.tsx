@@ -42,7 +42,7 @@ export function Header() {
       <div className="container-luxe flex items-center justify-between h-20">
         <Link to="/" className="flex items-center gap-2 group">
           <span className="w-9 h-9 rounded-sm bg-gradient-gold flex items-center justify-center font-display text-navy-deep font-bold">
-            JH
+            SK
           </span>
           <div className="hidden sm:block leading-tight">
             <div className={`font-display text-base ${scrolled ? (dark ? "text-white" : "text-navy-deep") : "text-white"}`}>
