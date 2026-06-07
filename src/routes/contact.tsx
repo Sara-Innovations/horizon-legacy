@@ -93,10 +93,13 @@ function Contact() {
 
       <section className="h-[420px] bg-secondary relative overflow-hidden">
         <iframe
-          title="Office location"
-          src="https://www.openstreetmap.org/export/embed.html?bbox=55.265%2C25.180%2C55.295%2C25.205&layer=mapnik"
-          className="w-full h-full grayscale"
+          title="Office location — Siddique Tower, Mohakhali, Dhaka"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d82611.61750202533!2d90.36427647882023!3d23.784717003047668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c771567dc1e9%3A0x299f1a6c628a2b78!2sSiddique%20Tower!5e0!3m2!1sen!2sbd!4v1780821453408!5m2!1sen!2sbd"
+          className="w-full h-full"
+          style={{ border: 0 }}
+          allowFullScreen
           loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
         />
       </section>
     </Layout>
