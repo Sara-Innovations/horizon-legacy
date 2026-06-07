@@ -16,9 +16,9 @@ export const Route = createFileRoute("/media")({
 });
 
 const videos = [
-  { title: "Keynote — Cityscape Global 2026", thumb: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=900" },
-  { title: "Interview with Bloomberg Middle East", thumb: "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=900" },
-  { title: "Inside Landmark Group — A Studio Tour", thumb: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=900" },
+  { title: "Keynote — REHAB Fair 2026, Dhaka", thumb: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=900" },
+  { title: "Interview with Channel i", thumb: "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=900" },
+  { title: "Inside Landmark Group — Mohakhali HQ Tour", thumb: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=900" },
 ];
 
 function Media() {
@@ -38,7 +38,7 @@ function Media() {
                   <span className="text-gold tracking-[0.2em] uppercase">{m.type}</span>
                   <span className="text-muted-foreground">{m.date}</span>
                 </div>
-                <h3 className="font-display text-lg text-navy-deep mb-2">{m.title}</h3>
+                <h3 className="font-display text-lg text-foreground mb-2">{m.title}</h3>
                 <div className="text-sm text-muted-foreground flex items-center gap-2 group-hover:text-gold transition">
                   {m.outlet} <ExternalLink size={12} />
                 </div>

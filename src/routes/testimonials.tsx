@@ -16,8 +16,8 @@ export const Route = createFileRoute("/testimonials")({
 });
 
 const videoTestimonials = [
-  { name: "Khalid Bin Saif", role: "Sovereign Wealth Investor", thumb: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=900" },
-  { name: "Emma Robertson", role: "Family Office Principal", thumb: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=900" },
+  { name: "Tanvir Hasan", role: "Private Investor, Dhaka", thumb: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=900" },
+  { name: "Meherun Nesa", role: "Family Office Principal, Chattogram", thumb: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=900" },
 ];
 
 function Testimonials() {
@@ -30,11 +30,11 @@ function Testimonials() {
           {testimonials.map((t) => (
             <div key={t.name} className="p-8 border border-border bg-card hover:shadow-luxe transition">
               <Quote className="text-gold mb-5" size={24} />
-              <p className="text-lg leading-relaxed text-navy-deep font-display italic mb-6">"{t.quote}"</p>
+              <p className="text-lg leading-relaxed text-foreground font-display italic mb-6">"{t.quote}"</p>
               <div className="flex items-center gap-4 pt-6 border-t border-border">
                 <img src={t.image} alt={t.name} className="w-12 h-12 rounded-full object-cover" />
                 <div>
-                  <div className="font-medium text-navy-deep">{t.name}</div>
+                  <div className="font-medium text-foreground">{t.name}</div>
                   <div className="text-xs text-muted-foreground tracking-wide uppercase">{t.role}</div>
                 </div>
               </div>

@@ -16,7 +16,7 @@ export function Footer() {
             </div>
           </div>
           <p className="text-sm leading-relaxed text-white/60">
-            Shaping skylines and building sustainable communities for the next generation.
+            Shaping skylines and building sustainable communities across Bangladesh.
           </p>
         </div>
 
@@ -51,9 +51,19 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-white/10">
-        <div className="container-luxe py-6 flex flex-col md:flex-row justify-between gap-2 text-xs text-white/50">
-          <span>© {new Date().getFullYear()} Landmark Group All rights reserved.</span>
-          <span>Crafted with vision and precision.</span>
+        <div className="container-luxe py-6 flex flex-col md:flex-row justify-between items-center gap-2 text-xs text-white/50">
+          <span>© {new Date().getFullYear()} Landmark Group. All rights reserved.</span>
+          <span>
+            Developed by{" "}
+            <a
+              href="https://saracodelabs.com.bd/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gold hover:text-gold-soft transition"
+            >
+              SCL
+            </a>
+          </span>
         </div>
       </div>
     </footer>

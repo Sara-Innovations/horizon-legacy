@@ -38,7 +38,7 @@ function Blog() {
             value={q}
             onChange={(e) => setQ(e.target.value)}
             placeholder="Search insights..."
-            className="w-full bg-secondary border border-border pl-11 pr-4 py-3 text-sm focus:outline-none focus:border-gold transition"
+            className="w-full bg-secondary text-foreground border border-border pl-11 pr-4 py-3 text-sm focus:outline-none focus:border-gold transition"
           />
         </div>
 
@@ -49,10 +49,10 @@ function Blog() {
             </div>
             <div className="flex flex-col justify-center">
               <div className="text-gold text-xs tracking-[0.3em] uppercase mb-3">Featured · {featured.category}</div>
-              <h2 className="text-3xl md:text-4xl font-display text-navy-deep mb-4 group-hover:text-gold transition">{featured.title}</h2>
+              <h2 className="text-3xl md:text-4xl font-display text-foreground mb-4 group-hover:text-gold transition">{featured.title}</h2>
               <p className="text-muted-foreground mb-6">{featured.summary}</p>
               <div className="text-xs text-muted-foreground tracking-wide">Md Shariful Islam Khandakar · {featured.date}</div>
-              <div className="mt-6 inline-flex items-center gap-2 text-navy-deep group-hover:text-gold text-sm">
+              <div className="mt-6 inline-flex items-center gap-2 text-foreground group-hover:text-gold text-sm">
                 Read article <ArrowRight size={14} />
               </div>
             </div>
@@ -66,7 +66,7 @@ function Blog() {
                 <img src={b.image} alt={b.title} className="w-full h-full object-cover group-hover:scale-110 transition duration-700" />
               </div>
               <div className="text-gold text-[10px] tracking-[0.3em] uppercase mb-2">{b.category}</div>
-              <h3 className="font-display text-xl text-navy-deep mb-2 group-hover:text-gold transition">{b.title}</h3>
+              <h3 className="font-display text-xl text-foreground mb-2 group-hover:text-gold transition">{b.title}</h3>
               <p className="text-sm text-muted-foreground mb-3">{b.summary}</p>
               <div className="text-xs text-muted-foreground">Md Shariful Islam Khandakar · {b.date}</div>
             </article>

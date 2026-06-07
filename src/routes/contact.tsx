@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Layout, PageHeader } from "@/components/site/Layout";
 import { MapPin, Phone, Mail, Send, Linkedin, Twitter, Instagram } from "lucide-react";
+import { offices } from "@/data/site";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -15,10 +16,6 @@ export const Route = createFileRoute("/contact")({
   component: Contact,
 });
 
-const offices = [
-  { city: "Dhaka (HQ)", lines: ["Landmark Group", "49 Siddique Tower", "Mohakhali C/A", "Dhaka 1212, Bangladesh"] },
-];
-
 function Contact() {
   const [sent, setSent] = useState(false);
   return (
@@ -28,7 +25,7 @@ function Contact() {
       <section className="py-24 container-luxe grid lg:grid-cols-5 gap-16">
         <div className="lg:col-span-2 space-y-8">
           <div>
-            <h3 className="font-display text-2xl text-navy-deep mb-4">Direct Office</h3>
+            <h3 className="font-display text-2xl text-foreground mb-4">Direct Office</h3>
             <ul className="space-y-3 text-muted-foreground">
               <li className="flex items-start gap-3"><Phone size={16} className="text-gold mt-1 shrink-0" /> +880 1700-000000</li>
               <li className="flex items-start gap-3"><Mail size={16} className="text-gold mt-1 shrink-0" /> landmarkldltd@gmail.com</li>
@@ -36,10 +33,10 @@ function Contact() {
             </ul>
           </div>
           <div>
-            <h3 className="font-display text-2xl text-navy-deep mb-4">Follow</h3>
+            <h3 className="font-display text-2xl text-foreground mb-4">Follow</h3>
             <div className="flex gap-3">
               {[Linkedin, Twitter, Instagram].map((Icon, i) => (
-                <a key={i} href="#" className="w-11 h-11 border border-border hover:bg-gold hover:border-gold hover:text-navy-deep flex items-center justify-center transition">
+                <a key={i} href="#" className="w-11 h-11 border border-border text-foreground hover:bg-gold hover:border-gold hover:text-navy-deep flex items-center justify-center transition">
                   <Icon size={16} />
                 </a>
               ))}
@@ -51,20 +48,20 @@ function Contact() {
           onSubmit={(e) => { e.preventDefault(); setSent(true); }}
           className="lg:col-span-3 bg-secondary p-8 md:p-12 space-y-5"
         >
-          <h3 className="font-display text-2xl text-navy-deep mb-2">Send a Message</h3>
+          <h3 className="font-display text-2xl text-foreground mb-2">Send a Message</h3>
           <p className="text-sm text-muted-foreground mb-6">We respond to all serious enquiries within two business days.</p>
           <div className="grid md:grid-cols-2 gap-5">
-            <input required placeholder="Full Name" className="bg-background border border-border px-4 py-3 text-sm focus:outline-none focus:border-gold transition" />
-            <input required type="email" placeholder="Email Address" className="bg-background border border-border px-4 py-3 text-sm focus:outline-none focus:border-gold transition" />
+            <input required placeholder="Full Name" className="bg-background text-foreground border border-border px-4 py-3 text-sm focus:outline-none focus:border-gold transition" />
+            <input required type="email" placeholder="Email Address" className="bg-background text-foreground border border-border px-4 py-3 text-sm focus:outline-none focus:border-gold transition" />
           </div>
-          <input placeholder="Company / Organization" className="w-full bg-background border border-border px-4 py-3 text-sm focus:outline-none focus:border-gold transition" />
-          <select className="w-full bg-background border border-border px-4 py-3 text-sm focus:outline-none focus:border-gold transition">
+          <input placeholder="Company / Organization" className="w-full bg-background text-foreground border border-border px-4 py-3 text-sm focus:outline-none focus:border-gold transition" />
+          <select className="w-full bg-background text-foreground border border-border px-4 py-3 text-sm focus:outline-none focus:border-gold transition">
             <option>Partnership Enquiry</option>
             <option>Investment Opportunity</option>
             <option>Media & Press</option>
             <option>General Enquiry</option>
           </select>
-          <textarea required rows={5} placeholder="Tell us about your enquiry..." className="w-full bg-background border border-border px-4 py-3 text-sm focus:outline-none focus:border-gold transition" />
+          <textarea required rows={5} placeholder="Tell us about your enquiry..." className="w-full bg-background text-foreground border border-border px-4 py-3 text-sm focus:outline-none focus:border-gold transition" />
           <button type="submit" className="inline-flex items-center gap-3 bg-navy-deep text-white px-7 py-4 text-sm tracking-wide hover:bg-gradient-gold hover:text-navy-deep transition">
             {sent ? "Message Sent" : "Send Message"} <Send size={14} />
           </button>
@@ -74,7 +71,7 @@ function Contact() {
       <section className="py-20 bg-navy-deep text-white">
         <div className="container-luxe">
           <div className="text-center mb-14">
-            <div className="text-gold text-xs tracking-[0.3em] uppercase mb-3">Global Offices</div>
+            <div className="text-gold text-xs tracking-[0.3em] uppercase mb-3">Offices in Bangladesh</div>
             <h2 className="text-4xl font-display">Where We Operate</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-6">

@@ -3,7 +3,7 @@ import { lazy, Suspense } from "react";
 import { Layout, PageHeader } from "@/components/site/Layout";
 import { timeline, values } from "@/data/site";
 import { GraduationCap, Award, Sparkles } from "lucide-react";
-import ownerPhoto from "@/assets/md-shariful.jpg.asset.json";
+import ownerPhoto from "@/assets/owner.jpeg";
 
 const Building3D = lazy(() => import("@/components/site/Building3D").then((m) => ({ default: m.Building3D })));
 
@@ -28,13 +28,13 @@ function About() {
       {/* BIO */}
       <section className="py-24 container-luxe grid md:grid-cols-5 gap-12 items-center">
         <div className="md:col-span-2">
-          <img src={ownerPhoto.url} alt="Md Shariful Islam Khandakar" className="w-full aspect-[4/5] object-cover object-top shadow-luxe" />
+          <img src={ownerPhoto} alt="Md Shariful Islam Khandakar" className="w-full aspect-[4/5] object-cover object-top shadow-luxe" />
         </div>
         <div className="md:col-span-3">
           <div className="text-gold text-xs tracking-[0.3em] uppercase mb-3">Biography</div>
-          <h2 className="text-3xl md:text-4xl font-display text-navy-deep mb-6">Mr. Md Shariful Islam Khandakar</h2>
+          <h2 className="text-3xl md:text-4xl font-display text-foreground mb-6">Mr. Md Shariful Islam Khandakar</h2>
           <div className="space-y-5 text-muted-foreground leading-relaxed">
-            <p>Md Shariful Islam Khandakar is the Managing Director and Chief Executive Officer of Landmark Group, one of the region's most respected real estate companies. Under his stewardship, the firm has grown into a multi-billion-dollar developer with a portfolio spanning the GCC and select international markets.</p>
+            <p>Md Shariful Islam Khandakar is the Managing Director and Chief Executive Officer of Landmark Group, one of Bangladesh's most respected real estate companies. Under his stewardship, the firm has grown into a multi-thousand-crore developer with a portfolio spanning Dhaka, Chattogram, Sylhet, Khulna and beyond.</p>
             <p>With over 20 years in real estate, Shariful has led the delivery of more than 80 landmark residential, commercial and mixed-use projects. He is widely regarded as a thoughtful, principled leader whose work is defined by a deep commitment to sustainability, community and craft.</p>
             <p>Beyond business, Shariful serves on the boards of several industry councils and philanthropic foundations focused on education, urban innovation and climate.</p>
           </div>
@@ -74,7 +74,7 @@ function About() {
         <div className="container-luxe grid md:grid-cols-2 gap-12 items-center">
           <div>
             <div className="text-gold text-xs tracking-[0.3em] uppercase mb-3">Leadership Philosophy</div>
-            <h2 className="text-4xl font-display text-navy-deep mb-6">"Architecture is the most public expression of our values."</h2>
+            <h2 className="text-4xl font-display text-foreground mb-6">"Architecture is the most public expression of our values."</h2>
             <p className="text-muted-foreground leading-relaxed">I believe great development is an act of stewardship. Every site we touch belongs to the people who will live, work and gather there long after we are gone. Our role is to honour that responsibility with clarity, courage and care.</p>
           </div>
           <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1000" alt="" className="aspect-[5/4] object-cover w-full shadow-luxe" />
@@ -85,7 +85,7 @@ function About() {
       <section className="py-24 container-luxe">
         <div className="text-center mb-16">
           <div className="text-gold text-xs tracking-[0.3em] uppercase mb-3">Professional Journey</div>
-          <h2 className="text-4xl font-display text-navy-deep">Two decades of building</h2>
+          <h2 className="text-4xl font-display text-foreground">Two decades of building</h2>
         </div>
         <div className="relative max-w-3xl mx-auto">
           <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-border" />
@@ -93,7 +93,7 @@ function About() {
             <div key={t.year} className={`relative mb-12 md:grid md:grid-cols-2 md:gap-12 ${i % 2 === 0 ? "" : "md:[direction:rtl]"}`}>
               <div className={`pl-12 md:pl-0 md:[direction:ltr] ${i % 2 === 0 ? "md:text-right md:pr-12" : "md:pl-12"}`}>
                 <div className="text-gold font-display text-3xl">{t.year}</div>
-                <h3 className="font-display text-xl text-navy-deep mt-1">{t.title}</h3>
+                <h3 className="font-display text-xl text-foreground mt-1">{t.title}</h3>
                 <p className="text-muted-foreground text-sm mt-2 leading-relaxed">{t.text}</p>
               </div>
               <div className="absolute left-4 md:left-1/2 -translate-x-1/2 top-2 w-3 h-3 rounded-full bg-gold ring-4 ring-background" />
@@ -115,7 +115,7 @@ function About() {
             <Award className="text-gold mb-4" size={32} />
             <div className="text-xs tracking-[0.3em] uppercase text-gold mb-2">Experience</div>
             <h3 className="font-display text-2xl mb-2">20+ Years of Leadership</h3>
-            <p className="text-white/70">Delivering over $12B in developments across residential, commercial and mixed-use sectors.</p>
+            <p className="text-white/70">Delivering over ৳1,32,000 Cr in developments across residential, commercial and mixed-use sectors.</p>
           </div>
         </div>
       </section>
@@ -124,13 +124,13 @@ function About() {
       <section className="py-24 container-luxe">
         <div className="text-center mb-14">
           <div className="text-gold text-xs tracking-[0.3em] uppercase mb-3">Core Values</div>
-          <h2 className="text-4xl font-display text-navy-deep">The principles that guide every decision</h2>
+          <h2 className="text-4xl font-display text-foreground">The principles that guide every decision</h2>
         </div>
         <div className="grid md:grid-cols-4 gap-6">
           {values.map((v) => (
             <div key={v.title} className="border border-border p-8 hover:border-gold hover:shadow-luxe transition group">
               <div className="w-10 h-px bg-gold mb-6 group-hover:w-16 transition-all" />
-              <h3 className="font-display text-xl text-navy-deep mb-3">{v.title}</h3>
+              <h3 className="font-display text-xl text-foreground mb-3">{v.title}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">{v.text}</p>
             </div>
           ))}
@@ -141,8 +141,8 @@ function About() {
       <section className="py-24 bg-secondary">
         <div className="container-luxe max-w-3xl text-center">
           <div className="text-gold text-xs tracking-[0.3em] uppercase mb-3">A Personal Note</div>
-          <h2 className="text-3xl md:text-4xl font-display text-navy-deep italic">"We do not build buildings. We build the places where people will fall in love, raise families, start companies and remember the most important moments of their lives. That is the privilege — and the duty — of our profession."</h2>
-          <div className="mt-8 font-display text-navy-deep">— Md Shariful Islam Khandakar</div>
+          <h2 className="text-3xl md:text-4xl font-display text-foreground italic">"We do not build buildings. We build the places where people will fall in love, raise families, start companies and remember the most important moments of their lives. That is the privilege — and the duty — of our profession."</h2>
+          <div className="mt-8 font-display text-foreground">— Md Shariful Islam Khandakar</div>
         </div>
       </section>
     </Layout>

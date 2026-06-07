@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { Menu, X, Moon, Sun } from "lucide-react";
+import { useTheme } from "@/hooks/use-theme";
 
 const nav = [
   { to: "/", label: "Home" },
@@ -17,7 +18,8 @@ const nav = [
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const [dark, setDark] = useState(false);
+  const { theme, toggleTheme } = useTheme();
+  const dark = theme === "dark";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -27,13 +29,12 @@ export function Header() {
   }, []);
 
   useEffect(() => {
-    document.documentElement.classList.toggle("dark", dark);
-  }, [dark]);
-
-  useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
   }, [open]);
+
+  const scrolledText = dark ? "text-white" : "text-foreground";
+  const heroText = "text-white";
 
   return (
     <header
@@ -41,7 +42,7 @@ export function Header() {
         scrolled
           ? dark
             ? "glass-dark shadow-lg"
-            : "glass-light shadow-sm bg-white/90"
+            : "glass-light shadow-sm bg-white/90 dark:bg-card/90"
           : "bg-transparent"
       }`}
     >
@@ -51,7 +52,7 @@ export function Header() {
             SK
           </span>
           <div className="hidden sm:block leading-tight">
-            <div className={`font-display text-base ${scrolled ? (dark ? "text-white" : "text-navy-deep") : "text-white"}`}>
+            <div className={`font-display text-base ${scrolled ? scrolledText : heroText}`}>
               Md Shariful Islam Khandakar
             </div>
             <div className="text-[10px] tracking-[0.25em] uppercase text-gold">
@@ -68,7 +69,7 @@ export function Header() {
               activeProps={{ className: "text-gold" }}
               activeOptions={{ exact: n.to === "/" }}
               className={`px-3 py-2 text-sm tracking-wide transition-colors hover:text-gold ${
-                scrolled ? (dark ? "text-white/90" : "text-navy-deep") : "text-white/90"
+                scrolled ? (dark ? "text-white/90" : "text-foreground/90") : "text-white/90"
               }`}
             >
               {n.label}
@@ -78,13 +79,13 @@ export function Header() {
 
         <div className="flex items-center gap-2">
           <button
-            onClick={() => setDark((d) => !d)}
+            onClick={toggleTheme}
             aria-label="Toggle theme"
             className={`p-2 rounded-full transition ${
               scrolled
                 ? dark
                   ? "text-white hover:bg-white/10"
-                  : "text-navy-deep hover:bg-secondary"
+                  : "text-foreground hover:bg-secondary"
                 : "text-white hover:bg-white/10"
             }`}
           >
@@ -93,7 +94,7 @@ export function Header() {
           <button
             onClick={() => setOpen(true)}
             aria-label="Open menu"
-            className={`lg:hidden p-2 ${scrolled ? (dark ? "text-white" : "text-navy-deep") : "text-white"}`}
+            className={`lg:hidden p-2 ${scrolled ? scrolledText : heroText}`}
           >
             <Menu size={22} />
           </button>
@@ -101,13 +102,10 @@ export function Header() {
       </div>
 
       {open && typeof document !== "undefined" && createPortal(
-        <div
-          className="fixed inset-0 z-[100] lg:hidden overflow-y-auto"
-          style={{ backgroundColor: "oklch(0.13 0.04 260)" }}
-        >
-          <div className="container-luxe flex items-center justify-between h-20">
-            <span className="font-display text-white text-lg">Menu</span>
-            <button onClick={() => setOpen(false)} className="text-white p-2" aria-label="Close menu">
+        <div className="fixed inset-0 z-[100] lg:hidden overflow-y-auto bg-background">
+          <div className="container-luxe flex items-center justify-between h-20 border-b border-border">
+            <span className="font-display text-foreground text-lg">Menu</span>
+            <button onClick={() => setOpen(false)} className="text-foreground p-2" aria-label="Close menu">
               <X size={24} />
             </button>
           </div>
@@ -117,7 +115,7 @@ export function Header() {
                 key={n.to}
                 to={n.to}
                 onClick={() => setOpen(false)}
-                className="text-white text-2xl font-display py-3 border-b border-white/10 hover:text-gold transition"
+                className="text-foreground text-2xl font-display py-3 border-b border-border hover:text-gold transition"
               >
                 {n.label}
               </Link>

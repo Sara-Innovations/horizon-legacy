@@ -38,7 +38,7 @@ function Projects() {
               className={`px-5 py-2 text-xs tracking-[0.2em] uppercase transition border ${
                 filter === f
                   ? "bg-navy-deep text-white border-navy-deep"
-                  : "bg-transparent text-navy-deep border-border hover:border-gold hover:text-gold"
+                  : "bg-transparent text-foreground border-border hover:border-gold hover:text-gold"
               }`}
             >
               {f}
@@ -55,12 +55,12 @@ function Projects() {
               </div>
               <div className="p-6">
                 <div className="text-gold text-[10px] tracking-[0.3em] uppercase mb-2">{p.type}</div>
-                <h3 className="font-display text-xl text-navy-deep mb-3">{p.name}</h3>
+                <h3 className="font-display text-xl text-foreground mb-3">{p.name}</h3>
                 <p className="text-sm text-muted-foreground mb-5 leading-relaxed">{p.description}</p>
                 <div className="space-y-2 text-xs text-muted-foreground border-t border-border pt-4">
                   <div className="flex items-center gap-2"><MapPin size={12} className="text-gold" /> {p.location}</div>
                   <div className="flex items-center gap-2"><Calendar size={12} className="text-gold" /> {p.year}</div>
-                  <div className="flex items-center gap-2"><TrendingUp size={12} className="text-gold" /> Project value: <span className="text-navy-deep font-medium">{p.value}</span></div>
+                  <div className="flex items-center gap-2"><TrendingUp size={12} className="text-gold" /> Project value: <span className="text-foreground font-medium">{p.value}</span></div>
                 </div>
               </div>
             </article>
