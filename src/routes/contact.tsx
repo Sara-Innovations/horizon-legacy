@@ -30,9 +30,9 @@ function Contact() {
           <div>
             <h3 className="font-display text-2xl text-navy-deep mb-4">Direct Office</h3>
             <ul className="space-y-3 text-muted-foreground">
-              <li className="flex items-start gap-3"><Phone size={16} className="text-gold mt-1 shrink-0" /> +971 4 555 0199</li>
-              <li className="flex items-start gap-3"><Mail size={16} className="text-gold mt-1 shrink-0" /> office@primehorizon.ae</li>
-              <li className="flex items-start gap-3"><Mail size={16} className="text-gold mt-1 shrink-0" /> media@primehorizon.ae</li>
+              <li className="flex items-start gap-3"><Phone size={16} className="text-gold mt-1 shrink-0" /> +880 1700-000000</li>
+              <li className="flex items-start gap-3"><Mail size={16} className="text-gold mt-1 shrink-0" /> landmarkldltd@gmail.com</li>
+              <li className="flex items-start gap-3"><MapPin size={16} className="text-gold mt-1 shrink-0" /> 49 Siddique Tower, Mohakhali C/A, Dhaka 1212</li>
             </ul>
           </div>
           <div>
