@@ -1,7 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { lazy, Suspense } from "react";
 import { Layout, PageHeader } from "@/components/site/Layout";
 import { timeline, values } from "@/data/site";
-import { GraduationCap, Award } from "lucide-react";
+import { GraduationCap, Award, Sparkles } from "lucide-react";
+import ownerPhoto from "@/assets/md-shariful.jpg.asset.json";
+
+const Building3D = lazy(() => import("@/components/site/Building3D").then((m) => ({ default: m.Building3D })));
 
 export const Route = createFileRoute("/about")({
   head: () => ({
