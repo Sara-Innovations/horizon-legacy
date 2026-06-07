@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { ArrowRight, Award, Building2, Users, TrendingUp, Quote, ChevronLeft, ChevronRight } from "lucide-react";
 import { Layout } from "@/components/site/Layout";
 import { projects, testimonials } from "@/data/site";
+import ownerPhoto from "@/assets/md-shariful.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -90,9 +91,9 @@ function Home() {
             <div className="relative aspect-[4/5] max-w-md mx-auto">
               <div className="absolute -inset-4 bg-gradient-gold opacity-20 blur-3xl rounded-full" />
               <img
-                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=900&auto=format&fit=crop"
+                src={ownerPhoto.url}
                 alt="Md Shariful Islam Khandakar portrait"
-                className="relative w-full h-full object-cover shadow-luxe"
+                className="relative w-full h-full object-cover object-top shadow-luxe"
               />
               <div className="absolute -bottom-6 -left-6 glass p-5 text-white">
                 <div className="text-[10px] tracking-[0.25em] uppercase text-gold mb-1">Since 2003</div>

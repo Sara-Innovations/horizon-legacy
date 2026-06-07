@@ -95,14 +95,17 @@ export function Header() {
       </div>
 
       {open && (
-        <div className="fixed inset-0 bg-navy-deep z-50 lg:hidden">
-          <div className="container-luxe flex items-center justify-between h-20 bg-navy-deep">
+        <div
+          className="fixed inset-0 z-[60] lg:hidden overflow-y-auto"
+          style={{ backgroundColor: "oklch(0.13 0.04 260)" }}
+        >
+          <div className="container-luxe flex items-center justify-between h-20">
             <span className="font-display text-white text-lg">Menu</span>
             <button onClick={() => setOpen(false)} className="text-white p-2" aria-label="Close menu">
               <X size={24} />
             </button>
           </div>
-          <nav className="container-luxe flex flex-col gap-1 mt-8">
+          <nav className="container-luxe flex flex-col gap-1 mt-8 pb-12">
             {nav.map((n) => (
               <Link
                 key={n.to}
