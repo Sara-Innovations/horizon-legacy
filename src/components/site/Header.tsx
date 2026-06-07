@@ -95,9 +95,9 @@ export function Header() {
         </div>
       </div>
 
-      {open && (
+      {open && typeof document !== "undefined" && createPortal(
         <div
-          className="fixed inset-0 z-[60] lg:hidden overflow-y-auto"
+          className="fixed inset-0 z-[100] lg:hidden overflow-y-auto"
           style={{ backgroundColor: "oklch(0.13 0.04 260)" }}
         >
           <div className="container-luxe flex items-center justify-between h-20">
@@ -118,7 +118,8 @@ export function Header() {
               </Link>
             ))}
           </nav>
-        </div>
+        </div>,
+        document.body
       )}
     </header>
   );
