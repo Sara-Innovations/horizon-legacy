@@ -28,7 +28,7 @@ function About() {
       {/* BIO */}
       <section className="py-24 container-luxe grid md:grid-cols-5 gap-12 items-center">
         <div className="md:col-span-2">
-          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=900" alt="Md Shariful Islam Khandakar" className="w-full aspect-[4/5] object-cover shadow-luxe" />
+          <img src={ownerPhoto.url} alt="Md Shariful Islam Khandakar" className="w-full aspect-[4/5] object-cover object-top shadow-luxe" />
         </div>
         <div className="md:col-span-3">
           <div className="text-gold text-xs tracking-[0.3em] uppercase mb-3">Biography</div>
@@ -37,6 +37,34 @@ function About() {
             <p>Md Shariful Islam Khandakar is the Managing Director and Chief Executive Officer of Prime Horizon Developments Ltd., one of the region's most respected real estate companies. Under his stewardship, the firm has grown into a multi-billion-dollar developer with a portfolio spanning the GCC and select international markets.</p>
             <p>With over 20 years in real estate, Shariful has led the delivery of more than 80 landmark residential, commercial and mixed-use projects. He is widely regarded as a thoughtful, principled leader whose work is defined by a deep commitment to sustainability, community and craft.</p>
             <p>Beyond business, Shariful serves on the boards of several industry councils and philanthropic foundations focused on education, urban innovation and climate.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* VISION THROUGH ARCHITECTURE — 3D EXPERIENCE */}
+      <section className="relative py-24 bg-gradient-hero text-white overflow-hidden">
+        <div className="absolute inset-0 opacity-30 pointer-events-none" style={{ background: "radial-gradient(circle at 70% 30%, rgba(212,175,55,0.25), transparent 60%)" }} />
+        <div className="container-luxe relative grid lg:grid-cols-12 gap-12 items-center">
+          <div className="lg:col-span-5">
+            <div className="inline-flex items-center gap-2 text-gold text-xs tracking-[0.3em] uppercase mb-4">
+              <Sparkles size={14} /> Vision Through Architecture
+            </div>
+            <h2 className="text-4xl md:text-5xl font-display leading-tight mb-6">
+              Transforming Skylines Through <span className="italic text-gold">Innovation.</span>
+            </h2>
+            <p className="text-white/75 leading-relaxed mb-6">
+              Our vision extends beyond constructing buildings. We create sustainable communities, iconic landmarks, and investment opportunities that shape the future of urban living.
+            </p>
+            <ul className="space-y-3 text-sm text-white/70">
+              <li className="flex gap-3"><span className="text-gold">◆</span> Hover the glowing markers to reveal each zone of the development.</li>
+              <li className="flex gap-3"><span className="text-gold">◆</span> Drag to rotate · scroll to zoom · toggle Day / Night.</li>
+              <li className="flex gap-3"><span className="text-gold">◆</span> Real-time lighting, glass reflections and HDR environment.</li>
+            </ul>
+          </div>
+          <div className="lg:col-span-7">
+            <Suspense fallback={<div className="w-full h-[520px] md:h-[620px] rounded-sm bg-navy/40 animate-pulse flex items-center justify-center text-white/40 text-sm tracking-[0.3em] uppercase">Loading 3D Experience…</div>}>
+              <Building3D />
+            </Suspense>
           </div>
         </div>
       </section>
