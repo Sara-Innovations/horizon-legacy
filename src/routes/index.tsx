@@ -136,6 +136,7 @@ function Home() {
             <div className="flex flex-wrap gap-4">
               <Link
                 to="/projects"
+                data-magnetic="0.35"
                 className="group inline-flex items-center gap-3 bg-gradient-gold text-navy-deep px-7 py-4 text-sm tracking-wide font-medium hover:shadow-luxe transition"
               >
                 Explore Projects{" "}
@@ -143,6 +144,7 @@ function Home() {
               </Link>
               <Link
                 to="/about"
+                data-magnetic="0.35"
                 className="inline-flex items-center gap-3 border border-white/30 text-white px-7 py-4 text-sm tracking-wide hover:bg-white/10 transition"
               >
                 Meet Shariful
