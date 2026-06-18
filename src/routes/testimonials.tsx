@@ -43,6 +43,15 @@ function Testimonials() {
         </div>
       </section>
 
+      {/* MARQUEE STRIP */}
+      <section className="py-12 bg-secondary border-y border-border overflow-hidden">
+        <div data-marquee data-speed="60" className="flex gap-16 whitespace-nowrap text-foreground/70 font-display text-3xl md:text-4xl italic">
+          {["Trusted by Visionaries", "◆", "Featured in Forbes BD", "◆", "47 Industry Awards", "◆", "84+ Landmark Projects", "◆", "Building Beyond the Horizon", "◆"].map((t, i) => (
+            <span key={i} className={i % 2 === 1 ? "text-gold" : ""}>{t}</span>
+          ))}
+        </div>
+      </section>
+
       <section className="py-24 bg-navy-deep text-white">
         <div className="container-luxe">
           <div className="text-center mb-14">
