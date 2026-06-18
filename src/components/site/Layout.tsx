@@ -1,8 +1,10 @@
 import type { ReactNode } from "react";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
+import { useGsapPage } from "@/hooks/use-gsap-page";
 
 export function Layout({ children }: { children: ReactNode }) {
+  useGsapPage();
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Header />
